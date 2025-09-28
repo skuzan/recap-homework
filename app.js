@@ -336,8 +336,10 @@ const passedStudents = (arr) => {
 
     if (average >= passGrade) {
       student.passed = true;
+      student.result = "Tebrikler";
     } else {
       student.passed = false;
+      student.result = "Yaz okuluna kayıt yaptırınız";
     }
   }
   return arr;
