@@ -3,19 +3,29 @@
 
 // const numbers = [32, 45, 3, 7, 2, 12];
 
-// const largestNummmer = (number) => {
-//   return numbers.reduce((acc, num) => (num > acc ? num : acc));
+// const findMax = (number) => {
+//   return number.reduce((acc, num) => (num > acc ? num : acc));
 // };
 
-// console.log(`En büyük sayı : `, largestNummmer(numbers));
+// console.log(`En büyük sayı : `, findMax(numbers));
+
+// const findMax = (arr) => {
+//   let max = arr[0];
+//   for (let num of arr) {
+//     if (num > max) max = num;
+//   }
+//   return max;
+// };
+
+// console.log(`En büyük sayı : `, findMax(numbers));
 
 // ? Soru-2 Bir dizideki sayıların kareköklerinden oluşan yeni bir dizi döndüren fonksiyon yaz.
 //----------------------------------------------------------------------------------------
 
 // const numbers = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100];
 
-// const sqrt = (numbers) => {
-//   return numbers.map((num) => Math.sqrt(num));
+// const sqrt = (arr) => {
+//   return arr.map((num) => Math.sqrt(num));
 // };
 
 // console.log(sqrt(numbers));
@@ -25,8 +35,8 @@
 
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// const evenNumbers = (numbers) => {
-//   return numbers.filter((num) => num % 2 === 0);
+// const evenNumbers = (arr) => {
+//   return arr.filter((num) => num % 2 === 0);
 // };
 
 // console.log(evenNumbers(numbers));
@@ -34,35 +44,60 @@
 // ? Soru-4 Bir dizide verilen elemandan kaç tane olduğunu bulan fonksiyon yaz.
 //----------------------------------------------------------------------------------------
 
-// const arr = ["a", "b", "a", "c", "a"];
+// const words = ["a", "b", "a", "c", "a"];
 
 // const countWord = (arr, value) => {
 //   return arr.reduce((acc, item) => (item === value ? acc + 1 : acc), 0);
 // };
 
-// console.log(countWord(arr, "a"));
+// console.log(countWord(words, "a"));
+
+// const words = ["a", "b", "a", "c", "a"];
+// const search = "a";
+
+// const countElements = (arry, search) => {
+//   let counter = 0;
+//   for (let item of arry) {
+//     if (item === search) counter++;
+//   }
+//   return counter;
+// };
+
+// console.log(countElements(words, search));
 
 // ? Soru-5 Bir dizideki negatif sayıların toplamını bulan fonksiyon yaz.
 //----------------------------------------------------------------------------------------
 
 // const numbers = [10, -4, 7, -9, 11, 15, -19];
 
-// const negativeNumbers = (numbers) => {
-//   return numbers.filter((num) => num < 0).reduce((acc, num) => acc + num, 0);
+// const negativeNumbers = (arr) => {
+//   return arr.filter((num) => num < 0).reduce((acc, val) => acc + val, 0);
 // };
 
 // console.log(negativeNumbers(numbers));
 
+// const numbers = [10, -4, 7, -9, 11, 15, -19];
+
+// const negativeNum = (arr) => {
+//   let toplam = 0;
+//   for (let item of arr) {
+//     if (item < 0) toplam += item;
+//   }
+//   return toplam;
+// };
+
+// console.log(negativeNum(numbers));
+
 // ? Soru-6 Bir isimler dizisindeki her ismin uzunluğunu döndüren fonksiyon yaz.
 //----------------------------------------------------------------------------------------
 
-// const arr = ["Ali", "Mehmet", "Sinan", "Hüseyin", "Ömer", "Erdem", "Elif"];
+// const names = ["Ali", "Mehmet", "Sinan", "Hüseyin", "Ömer", "Erdem", "Elif"];
 
-// const lengtNamen = (ary) => {
+// const lengtNames = (ary) => {
 //   return arr.map((item) => item.length);
 // };
 
-// console.log(lengtNamen(arr));
+// console.log(lengtNames(names));
 
 // ? Soru-7 Bir dizideki her sayıyı verilen çarpanla çarpıp döndüren fonksiyon yaz.
 //----------------------------------------------------------------------------------------
@@ -70,7 +105,7 @@
 // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // const multiply = (arr, factor) => {
-//   return arr.map((item) => item * factor);
+//   return arr.map((num) => num * factor);
 // };
 
 // console.log(multiply(numbers, 3));
@@ -100,6 +135,21 @@
 // };
 
 // console.log(`${score.name}'nin en yüksek skoru :`, highestScore(score));
+
+// const score = {
+//   name: "Ali",
+//   scores: [70, 90, 85],
+// };
+
+// const highestScore = (obj) => {
+//   let highest = obj.scores[0];
+//   for (let num of obj.scores) {
+//     if (num > highest) highest = num;
+//   }
+//   return highest;
+// };
+
+// console.log(highestScore(score));
 
 // ? Soru-10 Öğrenciler dizisinde (objelerden oluşan) en genç öğrenciyi bulan fonksiyon yaz.
 //----------------------------------------------------------------------------------------
@@ -132,9 +182,9 @@
 //   },
 // };
 
-// const objectValues = (arr) => {
-//   for (let key in arr) {
-//     console.log(`${key}:`, arr[key]);
+// const objectValues = (obj) => {
+//   for (let key in obj) {
+//     console.log(`${key}:`, obj[key]);
 //   }
 // };
 
@@ -240,3 +290,30 @@
 // console.log(formatJson(university));
 
 // console.log(formatJs(result));
+
+// ? Soru-13 Öğrenciler dizisinde (objelerden oluşan) en genç öğrenciyi bulan fonksiyon yaz.
+//----------------------------------------------------------------------------------------
+/*  Soru:
+Bir sınıfta öğrencilerin bilgileri bir array içinde obje olarak tutuluyor.  
+Her öğrenci objesinde "name", "grades" (notların olduğu array) ve "passed" (boolean) alanı var.  
+
+Görev: Öğrencilerin ortalamasını hesaplayıp, 
+- ortalama 60 ve üzeri olanların "passed" değerini true,  
+- altında olanların "passed" değerini false yap.  
+
+Sonuçta öğrencilerin güncellenmiş halini döndüren bir fonksiyon yaz.  
+
+Örnek veri:
+const students = [
+  { name: "Ali", grades: [70, 80, 65], passed: null },
+  { name: "Ayşe", grades: [40, 55, 50], passed: null },
+  { name: "Mehmet", grades: [90, 95, 100], passed: null },
+];
+
+Beklenen çıktı:
+[
+  { name: "Ali", grades: [70, 80, 65], passed: true },
+  { name: "Ayşe", grades: [40, 55, 50], passed: false },
+  { name: "Mehmet", grades: [90, 95, 100], passed: true }
+]
+*/
