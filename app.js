@@ -317,3 +317,30 @@ Beklenen çıktı:
   { name: "Mehmet", grades: [90, 95, 100], passed: true }
 ]
 */
+
+const students = [
+  { name: "Ali", grades: [70, 80, 65], passed: null },
+  { name: "Ayşe", grades: [40, 55, 50], passed: null },
+  { name: "Mehmet", grades: [90, 95, 100], passed: null },
+];
+
+const passGrade = 70;
+
+const passedStudents = (arr) => {
+  for (let student of arr) {
+    let total = 0;
+    for (let grade of student.grades) {
+      total += grade;
+    }
+    let average = total / student.grades.length;
+
+    if (average >= passGrade) {
+      student.passed = true;
+    } else {
+      student.passed = false;
+    }
+  }
+  return arr;
+};
+
+console.log(passedStudents(students));
